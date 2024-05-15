@@ -1,7 +1,6 @@
 package com.santander.Domain;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Purchase {
@@ -11,9 +10,7 @@ public class Purchase {
     public Purchase() {}
 
     public double calculateTotal() {
-        return this.buyedItems.stream()
-                .map(BuyedItem::getTotal)
-                .reduce((ac, n) -> ac += n).get();
+        return this.buyedItems.stream().map(BuyedItem::getTotal).reduce((ac, n) -> ac += n).get();
     }
 
     public void addBuyedItem(BuyedItem buyedItem) {
