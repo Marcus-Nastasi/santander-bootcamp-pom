@@ -10,10 +10,6 @@ public class BuyedItem {
         this.quantity = quantity;
     }
 
-    public double getTotal() {
-        return this.quantity * this.product.getPrice();
-    }
-
     @Override
     public String toString() {
         return("BuyedItem{" + "product=" + product + ", quantity=" + quantity + '}');
@@ -22,6 +18,10 @@ public class BuyedItem {
     public void update(BuyedItem buyedItem) {
         this.setProduct(buyedItem.getProduct());
         this.setQuantity(buyedItem.getQuantity());
+    }
+
+    public double getTotal() {
+        return this.quantity * this.product.getPrice();
     }
 
     public Product getProduct() {
