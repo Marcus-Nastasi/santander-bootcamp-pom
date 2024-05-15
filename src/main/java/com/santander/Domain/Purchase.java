@@ -14,7 +14,8 @@ public class Purchase {
         return("Purchase{" + "buyedItems=" + buyedItems + ", subTotal: $" + this.calculateTotal() + '}');
     }
 
-    public double calculateTotal() {
+    public double calculateTotal() throws RuntimeException {
+        if (this.buyedItems.isEmpty()) throw new RuntimeException("Purchase list empty");
         return this.buyedItems.stream().map(BuyedItem::getTotal).reduce((ac, n) -> ac += n).get();
     }
 
@@ -22,7 +23,8 @@ public class Purchase {
         this.buyedItems.add(buyedItem);
     }
 
-    public void removeBuyedItem(BuyedItem buyedItem) {
+    public void removeBuyedItem(BuyedItem buyedItem) throws RuntimeException {
+        if (this.buyedItems.isEmpty()) throw new RuntimeException("Purchase list empty");
         this.buyedItems.remove(buyedItem);
     }
 
