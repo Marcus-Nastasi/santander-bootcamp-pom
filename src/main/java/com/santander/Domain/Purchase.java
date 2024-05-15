@@ -26,7 +26,7 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return("Purchase{" + "buyedItems=" + buyedItems + '}');
+        return("Purchase{" + "buyedItems=" + buyedItems + ", subTotal: $" + this.calculateTotal() + '}');
     }
 
     public List<BuyedItem> getBuyedItems() {

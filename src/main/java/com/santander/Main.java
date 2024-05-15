@@ -10,7 +10,7 @@ public class Main {
         BuyedItem buyedItem = new BuyedItem(product, 2);
         Purchase purchase = new Purchase();
         purchase.addBuyedItem(buyedItem);
-        System.out.println(purchase.calculateTotal());
+        System.out.println(purchase);
     }
 }
 
