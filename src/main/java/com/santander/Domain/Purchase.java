@@ -26,7 +26,8 @@ public class Purchase {
         this.buyedItems.remove(buyedItem);
     }
 
-    public void updateBuyedItem(BuyedItem buyedItem1, BuyedItem buyedItem2) {
+    public void updateBuyedItem(BuyedItem buyedItem1, BuyedItem buyedItem2) throws RuntimeException {
+        if (this.buyedItems.isEmpty()) throw new RuntimeException("Purchase list empty");
         this.buyedItems.forEach(b -> {
             if (b.equals(buyedItem1)) b.update(buyedItem2);
         });
