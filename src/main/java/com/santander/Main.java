@@ -10,9 +10,15 @@ public class Main {
         Product product2 = new Product(1002, "Banana", 0.99);
         Product product3 = new Product(1003, "Orange", 2.99);
         Product product4 = new Product(1004, "Torange", 4.99);
-        BuyedItem buyedItem = new BuyedItem(product, 2);
+        BuyedItem buyedItem = new BuyedItem(product, 10);
+        BuyedItem buyedItem2 = new BuyedItem(product2, 15);
+        BuyedItem buyedItem3 = new BuyedItem(product3, 3);
+        BuyedItem buyedItem4 = new BuyedItem(product4, 3);
         Purchase purchase = new Purchase();
         purchase.addBuyedItem(buyedItem);
+        purchase.addBuyedItem(buyedItem2);
+        purchase.addBuyedItem(buyedItem3);
+        purchase.addBuyedItem(buyedItem4);
         System.out.println(purchase);
     }
 }
