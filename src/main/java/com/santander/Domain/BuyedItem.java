@@ -14,6 +14,11 @@ public class BuyedItem {
         return this.quantity * this.product.getPrice();
     }
 
+    @Override
+    public String toString() {
+        return("BuyedItem{" + "product=" + product + ", quantity=" + quantity + '}');
+    }
+
     public Product getProduct() {
         return product;
     }
