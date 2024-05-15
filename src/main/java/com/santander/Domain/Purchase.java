@@ -9,6 +9,11 @@ public class Purchase {
 
     public Purchase() {}
 
+    @Override
+    public String toString() {
+        return("Purchase{" + "buyedItems=" + buyedItems + ", subTotal: $" + this.calculateTotal() + '}');
+    }
+
     public double calculateTotal() {
         return this.buyedItems.stream().map(BuyedItem::getTotal).reduce((ac, n) -> ac += n).get();
     }
@@ -25,11 +30,6 @@ public class Purchase {
         this.buyedItems.forEach(b -> {
             if (b.equals(buyedItem1)) b.update(buyedItem2);
         });
-    }
-
-    @Override
-    public String toString() {
-        return("Purchase{" + "buyedItems=" + buyedItems + ", subTotal: $" + this.calculateTotal() + '}');
     }
 
     public List<BuyedItem> getBuyedItems() {
